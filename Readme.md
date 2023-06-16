@@ -8,3 +8,7 @@
   </ul>
   
  <h4> This project can be cloned and previewed in browser </h4>
+
+
+<h2> Here is a sneak peak of the project </h2>
+ <image src = "image/demo.png">
