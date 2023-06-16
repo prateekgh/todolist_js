@@ -45,20 +45,20 @@ const filterTodos = (term) => {
     Array.from(list.children)// what we have done here is we have the html collection of lists thruh list.children
                               //and then we assigned filter class to those lists which donot match with the term
                               //so that they can be hidden 
-        .filter((todo)=> !todo.textContent.includes(term))
+        .filter((todo)=> !todo.textContent.toLowerCase().includes(term))
         .forEach((todo)=>todo.classList.add('d-none'));
 
     Array.from(list.children)// what we do here is , the assigned filter class above remain in the list 
                              // even after match happens after adding class , so to remove that 
                               //if it maches again we remove the filtererd class   
-        .filter((todo)=> todo.textContent.includes(term))
-        .forEach((todo)=>todo.classList.remove('d-none'))
+        .filter((todo)=> todo.textContent.toLowerCase().includes(term))
+        .forEach((todo)=>todo.classList.remove('d-none'));
 
     
 }
 
 search.addEventListener('keyup',()=>{
-    const term = search.value.trim();
+    const term = search.value.trim().toLowerCase();
     filterTodos(term);
 });
 
