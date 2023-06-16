@@ -7,4 +7,4 @@
   <li>Search to do list</li>
   </ul>
   
- <h4> This project can be cloned and proviewed in browser </h4>
+ <h4> This project can be cloned and previewed in browser </h4>
