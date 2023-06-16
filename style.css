@@ -2,31 +2,35 @@
         background-image: linear-gradient(to right,  #352f5b , rgb(60, 28, 60));
       
   }
-  .container{
+.container{
     max-width: 400px;
     
   }
- header{
+header{
     text-align: center;
     color:#fff;
 
  }
  
   
-  input[type=text],
-  input[type=text]:focus{
+input[type=text],
+input[type=text]:focus{
     color: #fff;
     border: none;
     background: rgba(0,0,0,0.2);
     max-width: 400px;
   }
-  .todos li{
+.todos li{
     background: #423a6f;
     color:#fff;
     border: 2px solid #352f5b ;
     width:400px;
     margin:auto;
   }
-  .delete{
+.delete{
     cursor: pointer;
+  }
+
+.filtered{
+    display: none !important;
   }

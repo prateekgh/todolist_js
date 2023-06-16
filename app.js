@@ -1,5 +1,6 @@
 const addForm = document.querySelector('.add');
 const list = document.querySelector('.todos');
+const search = document.querySelector('.search input');
 
 const generateTemplate = todo =>{
     const html = `<li class="list-group-item d-flex justify-content-between align-items-center">
@@ -30,4 +31,39 @@ list.addEventListener('click',e=>{
                                                 // the thrashcan has the class delete so if we click thrashcan the block executes
         e.target.parentElement.remove();     // the thrashcan is the target element and then the prent element is the list itself so we remove it 
     }
-})    
+
+
+});
+
+//keyup event  for searching
+
+//here we need to add event listener to the input not the form because we dont want submit event we want keyup event in the input
+
+
+
+const filterTodos = (term) => {
+    Array.from(list.children)// what we have done here is we have the html collection of lists thruh list.children
+                              //and then we assigned filter class to those lists which donot match with the term
+                              //so that they can be hidden 
+        .filter((todo)=> !todo.textContent.includes(term))
+        .forEach((todo)=>todo.classList.add('filtered'));
+
+    Array.from(list.children)// what we do here is , the assigned filter class above remain in the list 
+                             // even after match happens after adding class , so to remove that 
+                              //if it maches again we remove the filtererd class   
+        .filter((todo)=> todo.textContent.includes(term))
+        .forEach((todo)=>todo.classList.remove('filtered'));
+
+    
+}
+
+search.addEventListener('keyup',()=>{
+    const term = search.value.trim();
+    filterTodos(term);
+});
+
+
+
+
+
+
